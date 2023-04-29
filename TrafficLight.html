@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      
+    body {
+	margin: 0;
+	padding: 0;
+	background-color: #1a1a1a;
+    text-align: center;
+}
+
+.traffic-light {
+    margin: 100px auto;
+    padding: 10px 5px;
+    width: max-content;
+    height: auto;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.75);
+}
+
+.light {
+	margin: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+
+.red {
+	background-color: #ff5b5b;
+	box-shadow: 0px 0px 20px 5px rgba(255,0,0,0.75);
+}
+
+.yellow {
+	background-color: #ffd21f;
+	box-shadow: 0px 0px 20px 5px rgba(255,255,0,0.75);
+}
+
+.green {
+	background-color: #69ff8f;
+	box-shadow: 0px 0px 20px 5px rgba(0,255,0,0.75);
+}
+h1 {
+    font-family: cursive;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TrafficLight</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://github.com/champagnekamal">Github <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.linkedin.com/in/champagnekamal/">LinkedIn</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Projects
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://snakenladdersbyak.netlify.app/">Snake and ladders</a>
+                <a class="dropdown-item" href="https://todolistwithreactx.netlify.app/">ToDo List</a>
+                <a class="dropdown-item" href="https://github.com/champagnekamal/database">Database System</a>
+              
+              </div>
+            </li>
+           
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container traffic-light">
+    <div class="lightone red light"></div>
+    <div class="lighttwo yellow light"></div>
+    <div class="lightthree green light"></div>
+</div>
+<h1></h1>
+<script>
+    let one = document.querySelector('.lightone')
+    let two = document.querySelector('.lighttwo')
+    let three = document.querySelector('.lightthree')
+    let h1 = document.querySelector('h1')
+
+    const interval1 = ()=>{
+        one.style.background = "#ff5b5b"
+        two.style.background = "black"
+        three.style.background = "black"
+        h1.textContent = "STOP"
+        h1.style.color = "#ff5b5b"
+        console.log("first light");
+        setTimeout(interval2, 3000)
+    }
+    const interval2 = ()=>{
+        one.style.background = "black"
+        two.style.background = "#ffd21f"
+        three.style.background = "black"
+        h1.style.color = "#ffd21f"
+        h1.textContent = "READY"
+        console.log("Second light");
+        setTimeout(interval3, 3000)
+    }
+    const interval3 = ()=>{
+        one.style.background = "black"
+        two.style.background = "black"
+        three.style.background = "#69ff8f"
+        h1.style.color = "#69ff8f"
+        h1.textContent = "GO"
+        console.log("third light");
+        setTimeout(interval1, 3000)
+    }
+
+    setTimeout(interval1, 3000);
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
